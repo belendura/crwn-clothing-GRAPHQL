@@ -56,13 +56,12 @@ const config={
 
   export const convertCollectionsSnapshotToMap = (collections) =>{
     const transformedCollection=collections.docs.map(doc=>{
-    const {title, items} =doc.data();
-  
+    const {challenges} =doc.data();
+   
     return{
-        routeName: encodeURI(title.toLowerCase()),
-        id: doc.id,
-        title,
-        items
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      challenges
       };
     });
     
